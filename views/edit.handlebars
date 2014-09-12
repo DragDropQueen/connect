@@ -1,0 +1,116 @@
+{{> bio}}
+
+<div class="row">
+    <div class="small-12 columns">
+        <form method="POST" action="/account">
+            <div class="row collapse">
+                <div class="small-10 columns">
+                    <input type="text" placeholder="Github Username" value="{{user.login}}" name="login" disabled="true">
+                </div>
+                <div class="small-2 columns">
+                    <span class="postfix"><i class="fa fa-github"></i></span>
+                </div>
+            </div>
+        
+            <div class="row collapse">
+                <div class="small-1 columns">
+                      <span class="prefix">@</span>
+                </div>
+                <div class="small-9 columns">
+                    <input type="text" placeholder="Twitter" value="{{user.twitter}}" name="twitter">
+                </div>
+                <div class="small-2 columns">
+                    <span class="postfix"><i class="fa fa-twitter"></i></span>
+                </div>
+            </div>
+
+            <div class="row collapse">
+                <div class="small-10 columns">
+                    <input type="text" placeholder="Email" value="{{user.email}}" name="email">
+                </div>
+                <div class="small-2 columns">
+                    <span class="postfix"><i class="fa fa-envelope"></i></span>
+                </div>
+            </div>
+        
+            <div class="row collapse">
+                <div class="small-10 columns">
+                    <input type="text" placeholder="Phone Number" value="{{user.phone}}" name="phone">
+                </div>
+                <div class="small-2 columns">
+                    <span class="postfix"><i class="fa fa-mobile"></i></span>
+                </div>
+            </div>
+        
+            <div class="row collapse">
+                <div class="small-3 columns">
+                      <span class="prefix">http://</span>
+                </div>
+                <div class="small-7 columns">
+                    <input type="text" placeholder="www.example.com" value="{{user.blog}}" name="blog">
+                </div>
+                <div class="small-2 columns">
+                  <span class="postfix"><i class="fa fa-globe"></i></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="small-6 columns">
+                    <label>T-Shirt Size
+                        <select name="shirt[size]" value={{user.shirt.size}}>
+                            <option></option>
+                            {{{option user.shirt.size "small" "Small"}}}
+                            {{{option user.shirt.size "medium" "Medium"}}}
+                            {{{option user.shirt.size "large" "Large"}}}
+                            {{{option user.shirt.size "extra-large" "Extra Large"}}}
+                            {{{option user.shirt.size "xxl" "XXL"}}}
+                        </select>
+                    </label>
+                </div>
+                <div class="small-6 columns">
+                    <label>T-Shirt Style
+                        <select name="shirt[style]" value={{user.shirt.style}}>
+                            <option></option>
+                            {{{option user.shirt.style "mens" "Men's"}}}
+                            {{{option user.shirt.style "womens" "Women's"}}}
+                        </select>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row collapse">
+                <div class="small-12 columns">
+                    <label>Address</label>
+                    <input type="text" placeholder="Street Address (Line 1)" value="{{user.address.line1}}" name="address[line1]">
+                </div>
+            </div>
+            
+            <div class="row collapse">
+                <div class="small-12 columns">
+                    <input type="text" placeholder="Street Address (Line 2)" value="{{user.address.line2}}" name="address[line2]">
+                </div>
+            </div>
+            
+            <div class="row collapse">
+                <div class="small-6 columns">
+                    <input type="text" placeholder="City" value="{{user.address.city}}" name="address[city]">
+                </div>
+                <div class="small-2 columns">
+                    <input type="text" placeholder="State" value="{{user.address.state}}" name="address[state]">
+                </div>
+                <div class="small-4 columns">
+                    <input type="text" placeholder="City" value="{{user.address.zip}}" name="address[zip]">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="small-6 columns">
+                    <a href="/account" class="button expand alert">Go Back</a>
+                </div>
+                <div class="small-6 columns">
+                    <button type="submit" class="button expand">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
