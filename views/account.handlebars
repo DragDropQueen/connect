@@ -1,3 +1,47 @@
-<p>{{user.username}}</p>
+{{> bio}}
 
-<a href="/logout">Logout</a>
+<div class="row">
+    <div class="small-12 columns">
+        <table class="information">
+            <tbody>
+                <tr>
+                    <td>Github</td>
+                    <td><a href="{{user.html_url}}">{{user.html_url}}</a></td>
+                </tr>
+                {{#if user.blog}}
+                <tr>
+                    <td>Website</td>
+                    <td><a href="{{user.blog}}">{{user.blog}}</a></td>
+                </tr>
+                {{/if}}
+                {{#if user.twitter}}
+                <tr>
+                    <td>Twitter</td>
+                    <td><a href="http://twitter.com/{{user.twitter}}">{{user.twitter}}</a></td>
+                </tr>
+                {{/if}}
+                {{#if user.email}}
+                <tr>
+                    <td>Email</td>
+                    <td><a href="mailto://{{user.email}}">{{user.email}}</a></td>
+                </tr>
+                {{/if}}
+                {{#if user.phone}}
+                <tr>
+                    <td>Phone</td>
+                    <td><a href="tel://{{user.phone}}">{{user.phone}}</a></td>
+                </tr>
+                {{/if}}
+              </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-6 columns">
+        <a href="/logout" class="button expand alert">Log Out</a>
+    </div>
+    <div class="small-6 columns">
+        <a href="/edit" class="button expand">Edit Information</a>
+    </div>
+</div>
